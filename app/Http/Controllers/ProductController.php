@@ -46,7 +46,7 @@ class ProductController extends Controller
         $img = $request['hidden'];
         $filteredData = substr($img, strpos($img, ",") + 1);
         $unencodedData = base64_decode($filteredData);
-        $no = rand(rand(), rand());
+        $no = $no = $request['product_name'].rand(0,1000);
         $data = "images/" . $no . ".png";
         file_put_contents($data, $unencodedData);
          $this->validate($request, [
@@ -109,7 +109,7 @@ class ProductController extends Controller
                 $img = $request['hidden_data'];
                 $filteredData = substr($img, strpos($img, ",") + 1);
                 $unencodedData = base64_decode($filteredData);
-                $no = rand().time();
+                $no = $request['product_name'].rand(0,1000);
                 $data = "images/" . $no . ".png";
                 file_put_contents($data, $unencodedData);
                 Product::where('id', $request->input('product_id'))

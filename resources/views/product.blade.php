@@ -172,7 +172,7 @@
                                                 <td>{{ $product->arrival_date}}</td>
                                                 <td>{{ $product->distributor}}</td>
                                                 <td>{{ $product->batch}}</td>
-                                                <td><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#showImage" onclick="viewImage({{$product->img}})">View Image</button>
+                                                <td><button type="button" class="btn btn-info btn-xs" data-toggle="modal" data-target="#showImage" onclick="viewImage('{{$product->img}}')">View Image</button>
                                                     <input name ="hidden" type="hidden" id="hidden_data" value="{{$product->img}}">
                                                 </td>
                                                 <td>
