@@ -116,13 +116,11 @@
 
 <script type="text/javascript">
   function startprint(){
+    var a = document.getElementById('remove');
       var printContents = document.getElementById('printableArea').innerHTML;
       var originalContents = document.body.innerHTML;
-
       document.body.innerHTML = printContents;
-
       window.print();
-
       document.body.innerHTML = originalContents;
       a.setAttribute('href',"{{route('data')}}");
   }
